@@ -1,0 +1,11 @@
+.header_logo
+{
+    padding : 20px;
+    text-align: center;
+    background-color: var(--header-background);
+    color : var(--header-logo);
+    font-family: var(--inter-text);
+    font-weight: 600;
+    letter-spacing: 0.040rem;
+    font-size: 1.8rem;
+}

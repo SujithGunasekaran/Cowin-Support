@@ -1,0 +1,27 @@
+.home_select_container
+{
+    margin : 10px 0px;
+    display: flex;
+}
+.home_select_form
+{
+    margin-left: auto;
+}
+.home_select_input
+{
+    padding : 8px 15px;
+    margin : 0px 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--input-background);
+    color : var(--header-logo);
+    font-family: var(--inter-text);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.020rem;
+    box-shadow: 0 4px 10px rgba(0,29,54,.04)!important;
+}
+.home_select_input:focus
+{
+    outline: none;
+}
