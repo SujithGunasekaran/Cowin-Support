@@ -1,61 +1,74 @@
-// import { getStateList } from '../util_function';
-import axios from 'axios';
+import { getStateList, getDistricts, getVaccineDetails } from '../util_function';
 import { useEffect, useState } from 'react';
+import SelectForm from '../components/SelectForm';
+import HospitalInfo from '../components/HospitalInfo';
 
-const Home = (props) => {
+const Home = () => {
 
   const [stateList, setStateList] = useState([]);
+  const [districtsList, setDistrictsList] = useState([]);
+  const [vaccineList, setVaccineList] = useState([]);
+  const [selectedStateCode, setSelectedStateCode] = useState('');
+  const [selectedDistrictCode, setSelectedDistrictCode] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const getStateList = async () => {
-    try {
-      const response = await axios.get('https://cdn-api.co-vin.in/api/v2/admin/location/states');
-      setStateList(response.data.states);
-    }
-    catch (err) {
-      console.log(err.message);
-    }
+  const getState = async () => {
+    const response = await getStateList();
+    setStateList(response.states);
   }
 
   useEffect(() => {
-    getStateList();
+    getState();
   }, [])
+
+  const handleStateSelect = async (e, state, type) => {
+    state(e.target.value);
+    if (type === "state") {
+      const response = await getDistricts(e.target.value);
+      setDistrictsList(response.districts);
+    }
+  }
+
+  const handleSearchFormSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    const response = await getVaccineDetails(selectedDistrictCode);
+    setVaccineList(response.sessions);
+    setLoading(false);
+  }
+
 
   return (
     <div>
       <div className="home_select_container">
-        <div className="home_select_form">
-          <form>
-            <select
-              name="state"
-              id="state"
-              className="home_select_input"
-            >
-              {
-                stateList.map((stateInfo, index) => {
-                  {
-                    return index === 0 ? <option key={index} value="0">Select State</option> : <option key={index} value={stateInfo.state_id}>{stateInfo.state_name}</option>
-                  }
-                })
-              }
-            </select>
-            <select
-              name="state"
-              id="state"
-              className="home_select_input"
-            >
-              {
-                stateList.map((stateInfo, index) => (
-                  <option key={index} value={stateInfo.state_id}>{stateInfo.state_name}</option>
-                ))
-              }
-            </select>
-          </form>
-        </div>
+        <SelectForm
+          handleSearchFormSubmit={handleSearchFormSubmit}
+          handleStateSelect={handleStateSelect}
+          setSelectedDistrictCode={setSelectedDistrictCode}
+          setSelectedStateCode={setSelectedStateCode}
+          selectedStateCode={selectedStateCode}
+          selectedDistrictCode={selectedDistrictCode}
+          stateList={stateList}
+          districtsList={districtsList}
+          loading={loading}
+        />
+      </div>
+      <div className="home_vaccine_detail_container">
+        {
+          vaccineList.map((vaccineInfo, index) => (
+            <HospitalInfo
+              key={index}
+              vaccineInfo={vaccineInfo}
+              index={index}
+              vaccineList={vaccineList}
+            />
+          ))
+        }
+
       </div>
     </div>
   )
 };
-
 
 
 export default Home;
