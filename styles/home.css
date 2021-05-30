@@ -1,16 +1,14 @@
 .home_select_container
 {
     margin : 10px 0px;
+    padding : 10px;
     display: flex;
-}
-.home_select_form
-{
-    margin-left: auto;
+    align-items: center;
 }
 .home_select_input
 {
     padding : 8px 15px;
-    margin : 0px 8px;
+    margin : 10px 8px;
     border: none;
     border-radius: 8px;
     background-color: var(--input-background);
@@ -24,4 +22,186 @@
 .home_select_input:focus
 {
     outline: none;
+}
+.home_select_search_btn
+{
+    margin : 0px 10px;
+    padding : 8px 15px;
+    border : none;
+    border-radius: 8px;
+    background-color: var(--btn-background);
+    font-size: .9rem;
+    font-family: var(--inter-text);
+    font-weight: 400;
+    color : var(--white-text);
+    letter-spacing: 0.030rem;
+}
+.home_select_search_btn:focus
+{
+    outline: none;
+}
+.home_select_search_btn_loading
+{
+    margin : 0px 10px;
+    padding : 8px 15px;
+    border : none;
+    border-radius: 8px;
+    background-color: var(--btn-background-light);
+    font-size: .9rem;
+    font-family: var(--inter-text);
+    font-weight: 400;
+    color : var(--white-text);
+    letter-spacing: 0.030rem;
+}
+
+.home_vaccine_detail_container
+{
+    margin : 20px;
+    padding : 20px;
+    background-color: var(--input-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,29,54,.04)!important;
+}
+.home_vaccine_detail_card
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin : 25px 0px;
+}
+.home_vaccine_hospital_container
+{
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+}
+.home_vaccine_hospital_name_display
+{
+    display: flex;
+}
+.home_vaccine_hospital_name
+{
+    font-family: var(--inter-text);
+    font-size: 1rem;
+    font-weight: 600;
+    color : var(--header-logo);
+    text-transform: uppercase;
+    letter-spacing: 0.020rem;
+}
+.home_vaccine_hospital_paid
+{
+    margin : 0px 0px 0px 9px;
+    padding : 0px 9px;
+    border-radius: 50px;
+    background-color: var(--btn-background);
+    font-family: var(--inter-text);
+    font-size: .700rem;
+    font-weight: 500;
+    line-height: 26px;
+    color : var(--white-text);
+    letter-spacing: 0.040rem;
+}
+.home_vaccine_hospital_info
+{
+    padding : 8px 0px;
+    font-family: var(--inter-text);
+    font-size: .920rem;
+    font-weight: 500;
+    line-height: 26px;
+    color : var(--black-text);
+    letter-spacing: 0.040rem;
+}
+
+.home_vaccine_hospital_vaccine
+{
+    padding : 8px 0px;
+    font-family: var(--inter-text);
+    font-size: .920rem;
+    font-weight: 500;
+    line-height: 26px;
+    text-transform: uppercase;
+    color : var(--black-text);
+    letter-spacing: 0.040rem;
+}
+
+.home_vaccine_available_container
+{
+    margin-left : auto;
+    margin-right: 40px;
+    width : 100px;
+
+}
+.home_vaccine_first_dose
+{
+    padding : 3px 7px;
+    border : 1px solid var(--black-text);
+    font-family: var(--inter-text);
+    font-size: .750rem;
+    font-weight: 500;
+    line-height: 26px;
+    color : var(--black-text);
+    letter-spacing: 0.040rem;
+}
+.home_vaccine_available_dose
+{
+    text-align: center;
+    padding : 3px 7px;
+    font-family: var(--inter-text);
+    background-color: var(--green-background);
+    font-size: .750rem;
+    font-weight: 500;
+    line-height: 26px;
+    color : var(--white-text);
+    letter-spacing: 0.040rem;
+}
+.home_vaccine_available_vaccine_name
+{
+    text-align: center;
+    padding : 10px 7px 0px 7px;
+    font-family: var(--inter-text);
+    font-size: .750rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color : var(--black-text);
+    letter-spacing: 0.020rem;
+}
+.home_vaccine_age
+{
+    text-align: center;
+    padding : 10px 7px 0px 7px;
+    font-family: var(--inter-text);
+    font-size: .750rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color : var(--red-text);
+    letter-spacing: 0.020rem;
+}
+
+.home_vaccine_booked
+{
+    text-align: center;
+    padding : 8px 0px;
+    border-radius: 50px;
+    font-family: var(--inter-text);
+    font-size: .750rem;
+    font-weight: 500;
+    background-color: var(--red-background);
+    text-transform: uppercase;
+    color : var(--white-text);
+    letter-spacing: 0.020rem;
+}
+
+.home_vaccine_hr
+{
+    color : rgb(129, 128, 128);
+}
+
+@media(max-width:780px) {
+    .home_select_container {padding : 10px 2px}
+    .home_vaccine_detail_container { margin : 20px 8px; }
+}
+@media(max-width: 750px) {
+    .home_vaccine_available_container { margin : 10px 0px }
+    .home_vaccine_detail_card { display: block; }
 }
