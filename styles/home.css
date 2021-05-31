@@ -23,6 +23,25 @@
 {
     outline: none;
 }
+
+.home_select_search_input
+{
+    padding : 8px 4px;
+    margin : 10px 8px 20px 8px;
+    border: none;
+    background-color: var(--input-background);
+    border-bottom: 1px solid var(--black-text);
+    color : var(--header-logo);
+    font-family: var(--inter-text);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.020rem;
+}
+.home_select_search_input:focus
+{
+    outline: none;
+}
+
 .home_select_search_btn
 {
     margin : 0px 10px;
