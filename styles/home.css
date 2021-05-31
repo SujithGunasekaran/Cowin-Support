@@ -197,6 +197,25 @@
     color : rgb(129, 128, 128);
 }
 
+.home_vaccine_info 
+{
+    font-family: var(--inter-text);
+    font-size: .950rem;
+    word-spacing: 0.080rem;
+    font-weight: 500;
+    letter-spacing: 0.020rem;
+}
+.home_vaccine_danger_info
+{
+    padding : 0px 0px 10px 0px;
+    font-family: var(--inter-text);
+    font-size: .850rem;
+    word-spacing: 0.080rem;
+    font-weight: 500;
+    color : var(--red-background);
+    letter-spacing: 0.020rem;
+}
+
 @media(max-width:780px) {
     .home_select_container {padding : 10px 2px}
     .home_vaccine_detail_container { margin : 20px 8px; }
