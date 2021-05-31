@@ -2,11 +2,11 @@
 
 const HospitalInfo = (props) => {
 
-    const { vaccineInfo, index, vaccineList } = props;
+    const { vaccineInfo, index, vaccineList, lastHospitalElement } = props;
 
     return (
         <div>
-            <div className="home_vaccine_detail_card">
+            <div className="home_vaccine_detail_card" ref={lastHospitalElement}>
                 <div className="home_vaccine_hospital_container">
                     <div className="home_vaccine_hospital_name_display">
                         <div className="home_vaccine_hospital_name">{vaccineInfo.name}</div>
