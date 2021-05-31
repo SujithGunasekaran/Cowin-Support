@@ -65,7 +65,6 @@ const Home = () => {
     setLoading(true);
     const response = await getVaccineDetails(selectedDistrictCode);
     if (response) {
-      console.log(response);
       setVaccineList((prevVaccineList) => {
         let vaccineList = prevVaccineList.slice();
         vaccineList = response.sessions;
