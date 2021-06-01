@@ -21,8 +21,9 @@ export const getDistricts = async (stateCode) => {
 }
 
 export const getVaccineDetails = async (districtCode) => {
+    const date = new Date().toLocaleDateString();
     try {
-        const response = await axios.get(`https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=${districtCode}&date=30-05-2021`)
+        const response = await axios.get(`https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=${districtCode}&date=${date}`)
         return response.data;
     }
     catch (err) {
