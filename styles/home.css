@@ -93,7 +93,7 @@
 {
     display: flex;
     flex-direction: column;
-    max-width: 350px;
+    max-width: 400px;
 }
 .home_vaccine_hospital_name_display
 {
@@ -242,4 +242,5 @@
 @media(max-width: 750px) {
     .home_vaccine_available_container { margin : 10px 0px }
     .home_vaccine_detail_card { display: block; }
+    .home_vaccine_hospital_container { width : 100% }
 }
